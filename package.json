@@ -1,17 +1,19 @@
 {
-  "name": "nextjs-with-external-styled-jsx",
+  "name": "nextjs-with-next-sass",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next",
+    "dev": "next -p 3001",
     "build": "next build",
     "start": "next start",
     "type-check": "tsc && tslint-config-prettier-check ./tslint.json"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "@zeit/next-typescript": "^1.1.1",
     "next": "^7.0.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "@types/next": "^7.0.6",
@@ -21,7 +23,6 @@
     "husky": "^1.3.1",
     "node-sass": "^4.11.0",
     "prettier": "^1.17.0",
-    "sass-loader": "^7.1.0",
     "tslint": "^5.15.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",

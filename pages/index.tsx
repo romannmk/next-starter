@@ -1,3 +1,5 @@
 import Page from '../components/Page'
 
-export default () => <Page title="Hello Next-Starter" />
+export default () => {
+  return <Page title="Hello Index Page" />
+}

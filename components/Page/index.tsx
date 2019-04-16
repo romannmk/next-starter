@@ -3,10 +3,9 @@ import { IPage } from './types'
 
 export default function Page({ title }: IPage) {
   return (
-    <div className="page">
+    <div className={styles.page}>
       <h1>{title}</h1>
       <p>Hover...</p>
-      <style jsx>{styles}</style>
     </div>
   )
 }

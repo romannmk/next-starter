@@ -1,20 +1,12 @@
 const withTypescript = require('@zeit/next-typescript')
-module.exports = withTypescript({
-  webpack: (config, { defaultLoaders }) => {
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: [
-        defaultLoaders.babel,
-        {
-          loader: require('styled-jsx/webpack').loader,
-          options: {
-            type: 'scoped',
-          },
-        },
-        'sass-loader',
-      ],
-    })
+const withSass = require('@zeit/next-sass')
 
-    return config
-  },
-})
+module.exports = withTypescript(
+  withSass({
+    cssModules: true,
+    cssLoaderOptions: {
+      importLoaders: 1,
+      localIdentName: '[local]___[hash:base64:5]',
+    },
+  }),
+)

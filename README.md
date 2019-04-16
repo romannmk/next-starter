@@ -1,4 +1,4 @@
-# Next.js, TypeScript with external styled-jsx
+# Next.js, TypeScript with next-sass
 
 #### Start development
 
