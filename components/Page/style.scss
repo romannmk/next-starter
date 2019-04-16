@@ -1,0 +1,14 @@
+@import '../../styles/colors.scss';
+
+.page {
+  padding: 100px;
+  text-align: center;
+
+  p {
+    color: $black;
+
+    &:hover {
+      color: $grey;
+    }
+  }
+}
