@@ -3,6 +3,7 @@
 https://github.com/zeit/next-plugins/tree/master/packages/next-sass
 
 Use bootstrap reboot for normalize css
+https://github.com/twbs/bootstrap/blob/master/dist/css/bootstrap-reboot.css
 
 #### Start development
 
