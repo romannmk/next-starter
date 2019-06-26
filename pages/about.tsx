@@ -3,9 +3,9 @@ import Page from '../components/Page'
 
 export default () => {
   return (
-    <Page title="Next-Starter with next-sass">
-      <Link href="/about">
-        <a>Go to about page</a>
+    <Page title="About Page">
+      <Link href="/">
+        <a>Go to main page</a>
       </Link>
     </Page>
   )

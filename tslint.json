@@ -6,6 +6,7 @@
   ],
   "rules": {
     "import-name": [false],
-    "function-name": [false]
+    "function-name": [false],
+    "no-submodule-imports": [false]
   }
 }
