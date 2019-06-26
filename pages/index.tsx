@@ -1,5 +1,5 @@
 import Page from '../components/Page'
 
 export default () => {
-  return <Page title="Index Page" />
+  return <Page title="Next starter with next-sass" />
 }
