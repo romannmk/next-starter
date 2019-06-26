@@ -1,6 +1,6 @@
 # Next.js, TypeScript with next-sass and CSS-Modules
 
-(https://github.com/zeit/next-plugins/tree/master/packages/next-sass)
+https://github.com/zeit/next-plugins/tree/master/packages/next-sass
 
 Use bootstrap reboot for normalize css
 
@@ -8,7 +8,7 @@ Use bootstrap reboot for normalize css
 
 1.  npm i
 2.  npm run dev
-3.  open (localhost:3001)
+3.  open http://localhost:3001
 
 #### Start production build
 
