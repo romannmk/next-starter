@@ -1,18 +1,27 @@
-import { NextComponentType, NextContext } from 'next'
+import { NextComponentType, NextPageContext } from 'next'
 import App, { Container } from 'next/app'
 import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
 
 
-Router.onRouteChangeStart = () => {
-  NProgress.start()
+if (typeof window !== "undefined") {
+  NProgress.configure({ speed: 300, minimum: 0.3 })
+
+  Router.events.on("routeChangeStart", () => {
+    NProgress.start();
+  });
+
+  Router.events.on("routeChangeComplete", () => {
+    NProgress.done();
+  });
+
+  Router.events.on("routeChangeError", () => {
+    NProgress.done();
+  });
 }
 
-Router.onRouteChangeComplete = () => NProgress.done()
-Router.onRouteChangeError = () => NProgress.done()
 
-NProgress.configure({ speed: 300, minimum: 0.3 })
 
 export default class MainApp extends App {
   public static async getInitialProps({
@@ -20,7 +29,7 @@ export default class MainApp extends App {
     ctx,
   }: {
     Component: NextComponentType
-    ctx: NextContext
+    ctx: NextPageContext
   }) {
     let pageProps = {}
 
