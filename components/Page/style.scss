@@ -2,11 +2,10 @@
 
 .page {
   padding: 100px;
-  text-align: center;
 
   a {
     &:hover {
-      color: $grey;
+      color: darken($primary, 15%);
     }
   }
 }

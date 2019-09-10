@@ -1,11 +1,12 @@
 import { NextComponentType, NextPageContext } from 'next'
-import App, { Container } from 'next/app'
+import App from 'next/app'
 import Head from 'next/head'
 import Router from 'next/router'
 import NProgress from 'nprogress'
+import Page from '../components/Page'
+import { isServer } from '../lib/isServer'
 
-
-if (typeof window !== "undefined") {
+if (!isServer) {
   NProgress.configure({ speed: 300, minimum: 0.3 })
 
   Router.events.on("routeChangeStart", () => {
@@ -20,8 +21,6 @@ if (typeof window !== "undefined") {
     NProgress.done();
   });
 }
-
-
 
 export default class MainApp extends App {
   public static async getInitialProps({
@@ -41,36 +40,44 @@ export default class MainApp extends App {
   }
 
   public render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps, router } = this.props
 
+    const defaultProps = {
+      ...pageProps,
+      ...router
+    }
     return (
-      <Container>
+      <>
         <Head>
           <link rel="stylesheet" href="/static/styles/reboot.css" />
         </Head>
         <style jsx global>{`
-          #nprogress {
-            position: fixed;
-            left: 0;
-            top: 0;
-            right: 0;
-            height: 10px;
-            background: transparent;
-            opacity: 1;
-            z-index: 1000;
+          @keyframes spin {
+            from {
+              transform: rotate(0);
+            }
+
+            to {
+              transform: rotate(360deg);
+            }
           }
 
-          #nprogress .bar {
-            width: 100%;
-            height: 1px;
-            position: fixed;
+          #nprogress .spinner {
+            width: 26px;
+            height: 26px;
+            border: 4px solid #000;
+            border-right-color: transparent;
             border-radius: 50%;
-            background: #000;
-            box-shadow: 0 0 20px #000;
+            right: 1rem;
+            bottom: 1rem;
+            position: fixed;
+            animation: spin 0.5s infinite linear;
           }
         `}</style>
-        <Component {...pageProps} />
-      </Container>
+        <Page>
+          <Component {...defaultProps} />
+        </Page>
+      </>
     )
   }
 }

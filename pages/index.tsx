@@ -1,12 +1,25 @@
 import Link from 'next/link'
-import Page from '../components/Page'
+
+const navigation = [
+  {
+    link: '/shows',
+    label: 'Show Request example',
+  },
+]
 
 export default () => {
   return (
-    <Page title="Next-Starter with next-sass">
-      <Link href="/about">
-        <a>Go to about page</a>
-      </Link>
-    </Page>
+    <>
+      <h1>Navigate</h1>
+      <ul>
+        {navigation.map(({ link, label }) => (
+          <li key={link.substring(1)}>
+            <Link href={link}>
+              <a>{label}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   )
 }

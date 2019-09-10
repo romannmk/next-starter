@@ -1,20 +1,16 @@
 {
   "compilerOptions": {
     "target": "esnext",
+    "experimentalDecorators": true,
     "module": "esnext",
     "jsx": "preserve",
-    "lib": [
-      "dom",
-      "es2017"
-    ],
+    "lib": ["dom", "es2017"],
     "moduleResolution": "node",
     "allowJs": true,
     "noEmit": true,
     "strict": true,
     "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
@@ -23,12 +19,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
