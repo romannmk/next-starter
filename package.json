@@ -1,36 +1,36 @@
 {
-  "name": "nextjs-with-next-sass",
+  "name": "with-mobx-react-lite",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next -p 3001",
+    "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc && tslint-config-prettier-check ./tslint.json"
+    "lint": "tslint --fix -p . -c ./tslint.json"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
-    "@zeit/next-typescript": "^1.1.1",
-    "isomorphic-unfetch": "^3.0.0",
-    "next": "^9.0.3",
-    "nprogress": "^0.2.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "mobx": "^5.15.0",
+    "mobx-react-lite": "^1.5.1",
+    "next": "^9.1.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
   },
   "devDependencies": {
-    "@types/next": "^8.0.6",
-    "@types/nprogress": "^0.2.0",
-    "@types/react": "^16.8.25",
-    "@types/react-dom": "^16.8.5",
-    "@types/styled-jsx": "^2.2.8",
-    "husky": "^3.0.2",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.18.2",
-    "sass-loader": "^7.1.0",
-    "tslint": "^5.18.0",
-    "tslint-config-airbnb": "^5.11.1",
+    "@types/next": "^9.0.0",
+    "@types/node": "^12.12.9",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.4",
+    "husky": "^3.1.0",
+    "import-sort-style-module": "^6.0.0",
+    "node-sass": "^4.13.0",
+    "prettier": "^1.19.1",
+    "prettier-plugin-import-sort": "0.0.3",
+    "sass-loader": "^8.0.0",
+    "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
-    "tslint-react": "^4.0.0",
-    "typescript": "^3.5.3"
+    "tslint-no-unused": "^0.2.0-alpha.1",
+    "tslint-react": "^4.1.0",
+    "typescript": "^3.7.2"
   },
   "license": "ISC",
   "browserslist": [
@@ -40,5 +40,11 @@
     "not op_mini all"
   ],
   "keywords": [],
-  "author": "Roman Nmk"
+  "author": "Roman Nmk",
+  "importSort": {
+    ".js, .jsx, .ts, .tsx": {
+      "style": "module",
+      "parser": "typescript"
+    }
+  }
 }

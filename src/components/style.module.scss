@@ -1,0 +1,12 @@
+@import "../styles/colors.scss";
+
+.page {
+  padding: 100px;
+  text-align: center;
+
+  :global(a) {
+    &:hover {
+      color: $error;
+    }
+  }
+}

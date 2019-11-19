@@ -1,4 +1,4 @@
-# Next.js, TypeScript with next-sass and CSS-Modules
+# Next.js, TypeScript with next-sass
 
 https://github.com/zeit/next-plugins/tree/master/packages/next-sass
 
