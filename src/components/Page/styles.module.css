@@ -1,0 +1,15 @@
+:root {
+  --text-color: #000;
+  --bg-color: #fff;
+}
+
+:global(body) {
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+.page {
+  padding: 100px;
+  min-height: 100vh;
+  text-align: center;
+}

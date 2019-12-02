@@ -1,9 +1,37 @@
+import { NextComponentType } from "next"
 import App from "next/app"
 import Head from "next/head"
 import Router from "next/router"
 import NProgress from "nprogress"
+import { IRootStore, StoreProvider, initializeStore } from "../stores"
 
-export default class DefaultApp extends App {
+interface IDefaultApp {
+  initialStoreData: IRootStore
+}
+
+export default class DefaultApp extends App<IDefaultApp> {
+  public static async getInitialProps({
+    Component,
+    ctx,
+  }: {
+    Component: NextComponentType
+    ctx: any
+  }) {
+    let pageProps = {}
+    const initialStoreData = initializeStore()
+    ctx.stores = initialStoreData
+
+    // Provide the store to getInitialProps of pages
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps({ ...ctx, initialStoreData })
+    }
+
+    return {
+      pageProps,
+      initialStoreData,
+    }
+  }
+
   public componentDidMount() {
     NProgress.configure({ speed: 300, minimum: 0.3 })
 
@@ -25,6 +53,7 @@ export default class DefaultApp extends App {
       Component,
       pageProps,
       router: { asPath, pathname, query },
+      initialStoreData,
     } = this.props
 
     const router = {
@@ -39,7 +68,9 @@ export default class DefaultApp extends App {
           <link rel="stylesheet" href="/styles/reboot.css" />
           <link rel="stylesheet" href="/styles/nprogress.css" />
         </Head>
-        <Component {...pageProps} {...router} />
+        <StoreProvider initialData={initialStoreData}>
+          <Component {...pageProps} {...router} />
+        </StoreProvider>
       </>
     )
   }
