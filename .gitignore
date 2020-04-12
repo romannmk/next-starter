@@ -1,0 +1,16 @@
+# build directory
+.next
+
+# dependency directory
+node_modules
+
+# logs
+*.log
+npm-debug.log*
+
+# OS-specific temporary files
+.idea
+.DS_Store
+
+# env files
+.env
