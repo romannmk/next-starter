@@ -6,7 +6,8 @@
     "now-build": "next build",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet"
+    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
     "next": "latest",
@@ -15,11 +16,15 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@storybook/react": "^5.3.18",
     "@types/next": "^9.0.0",
     "@types/node": "^13.11.1",
     "@types/react": "^16.9.34",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-react-app": "^9.1.2",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
     "eslint-plugin-prettier": "^3.1.2",
