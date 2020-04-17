@@ -1,5 +1,6 @@
 module.exports = (nextConfig = {}) => {
   return Object.assign({}, nextConfig, {
+    target: "serverless",
     webpack(config, options) {
       if (options.isServer) {
         config.externals = ["react", "react-dom", ...config.externals]
