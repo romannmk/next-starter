@@ -1,4 +1,4 @@
-# Next Starter
+# Next.js + Preact starter
 
 Based on the next.js [using-preact](https://github.com/zeit/next.js/tree/canary/examples/using-preact) example
 
@@ -7,6 +7,7 @@ Based on the next.js [using-preact](https://github.com/zeit/next.js/tree/canary/
 1. next.js https://nextjs.org/
 2. typescript https://www.typescriptlang.org/
 3. preact https://preactjs.com/
+4. storybook https://storybook.js.org/
 
 #### Start development
 
