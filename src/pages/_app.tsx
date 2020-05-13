@@ -15,6 +15,7 @@ const App: NextPage<AppProps> = ({ Component, pageProps }: AppProps) => (
     <Head>
       <title>Preact App</title>
     </Head>
+
     <Component {...pageProps} />
   </>
 )

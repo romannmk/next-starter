@@ -10,9 +10,11 @@
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
-    "next": "latest",
+    "next": "^9.4.0",
     "preact": "^10.4.0",
-    "preact-render-to-string": "^5.1.6"
+    "preact-render-to-string": "^5.1.6",
+    "react": "github:preact-compat/react#1.0.0",
+    "react-dom": "github:preact-compat/react-dom#1.0.0"
   },
   "license": "ISC",
   "devDependencies": {
@@ -30,8 +32,6 @@
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.19.0",
     "prettier": "^2.0.4",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
     "typescript": "^3.8.3"
   }
 }
