@@ -6,7 +6,7 @@
     "now-build": "next build",
     "build": "next build",
     "start": "next start",
-    "lint": "tsc --noEmit && eslint '*/**/*.{js,ts,tsx}' --quiet",
+    "lint": "tsc --noEmit && eslint 'src/**/*.{js,ts,tsx}' --quiet",
     "storybook": "start-storybook -p 9001 -c .storybook"
   },
   "dependencies": {
