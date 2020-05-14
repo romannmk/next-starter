@@ -1,4 +1,4 @@
-# Next.js + Preact starter
+# Next.js + Preact + MobX State Tree starter
 
 Based on the next.js [using-preact](https://github.com/zeit/next.js/tree/canary/examples/using-preact) example
 
