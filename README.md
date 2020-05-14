@@ -8,6 +8,7 @@ Based on the next.js [using-preact](https://github.com/zeit/next.js/tree/canary/
 2. typescript https://www.typescriptlang.org/
 3. preact https://preactjs.com/
 4. storybook https://storybook.js.org/
+5. mobx-state-tree https://mobx-state-tree.js.org/
 
 #### Start development
 
