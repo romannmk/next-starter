@@ -3,12 +3,12 @@ import { NextPage } from "next"
 import Link from "next/link"
 
 import Page from "components/Page"
-import Counter from "components/Counter"
+import Todos from "components/Todos"
 
 const About: NextPage = () => (
   <Page>
     <h1>Other Page</h1>
-    <Counter />
+    <Todos />
     <Link href="/">
       <a>Navigate</a>
     </Link>

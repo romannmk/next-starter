@@ -1,24 +1,28 @@
-import React, { useMemo, ReactElement, ReactNode } from "react"
-import { createContext } from "react"
-import { applySnapshot } from "mobx-state-tree"
-import { CounterStore, ICounterStore } from "./counter"
+import React, { useMemo, ReactElement, ReactNode, createContext } from "react"
+import { types, applySnapshot } from "mobx-state-tree"
+import { Todos, ITodos } from "./todos"
 
 export const StoreContext = createContext({})
 
-let store: ICounterStore | undefined
+let store: {}
 
-export function initializeStore(snapshot = null): ICounterStore {
-  const _store = store ?? CounterStore.create({ count: 0 })
+const RootStore = types
+  .model({
+    todosStore: Todos,
+  })
+  .create({ todosStore: {} })
+
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+export function initializeStore(snapshot: Partial<IRootStore> | null = null) {
+  const _store = store ?? RootStore
 
   // If your page has Next.js data fetching methods that use a Mobx store,
   // it will get hydrated here
   if (snapshot) {
     applySnapshot(_store, snapshot)
   }
-
   // For SSG and SSR create a new store
   if (typeof window === "undefined") return _store
-
   // Create the store once in the client
   if (!store) store = _store
 
@@ -30,7 +34,7 @@ export const StoreProvider = ({
   initialState,
 }: {
   children: ReactNode
-  initialState: ICounterStore
+  initialState: IRootStore
 }): ReactElement => {
   return (
     <StoreContext.Provider value={initialState}>
@@ -39,6 +43,10 @@ export const StoreProvider = ({
   )
 }
 
-export const useStore = (initialState: null): ICounterStore => {
-  return useMemo(() => initializeStore(initialState), [store])
+export const injectStore = (initialState: Partial<IRootStore>): IRootStore => {
+  return useMemo(() => initializeStore(initialState), []) as IRootStore
+}
+
+export type IRootStore = {
+  todosStore: ITodos
 }
