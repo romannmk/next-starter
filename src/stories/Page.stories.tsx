@@ -6,7 +6,7 @@ import Page from "../components/Page"
 
 storiesOf("Page", module).add("with text", () => {
   return (
-    <Page>
+    <Page title="Storybook">
       <h1>Hello Storybook</h1>
     </Page>
   )

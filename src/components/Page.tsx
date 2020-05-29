@@ -1,11 +1,16 @@
 import React, { SFC, ReactNode } from "react"
+import Head from "next/head"
 
-type TPage = {
+type Props = {
   children: ReactNode
+  title: string
 }
 
-const Page: SFC<TPage> = ({ children }: TPage) => (
+const Page: SFC<Props> = ({ children, title }: Props) => (
   <div className="page">
+    <Head>
+      <title>{title}</title>
+    </Head>
     {children}
     <style jsx>{`
       .page {

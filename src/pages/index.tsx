@@ -1,24 +1,18 @@
 import React from "react"
 import { NextPage } from "next"
+import Page from "components/Page"
 
-import Page from "../components/Page"
-
-const Index: NextPage = () => (
-  <Page>
-    <h1>Hello World</h1>
-    <p>
-      This is Next.js + Preact app <br />
-      Based on{" "}
-      <a
-        href="https://github.com/zeit/next.js/tree/canary/examples/using-preact"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        using-preact{" "}
-      </a>
-      example
-    </p>
+type Props = { attributes: { title: string }; html: string }
+const Home: NextPage<Props> = ({ attributes: { title }, html }: Props) => (
+  <Page title={title}>
+    <div dangerouslySetInnerHTML={{ __html: html }}></div>
   </Page>
 )
 
-export default Index
+export const getStaticProps = async (): Promise<object> => {
+  const content = await require("../../content/home.md")
+
+  return { props: { ...content } }
+}
+
+export default Home
