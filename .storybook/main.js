@@ -1,7 +1,6 @@
 module.exports = {
   stories: ["../src/**/*.stories.tsx"],
   webpackFinal: async (config) => {
-    // const nextConfig = require("../next.config.js")
     config.module.rules.push({
       test: /\.(ts|tsx)$/,
       loader: require.resolve("babel-loader"),

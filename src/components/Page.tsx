@@ -1,10 +1,10 @@
-import React, { SFC, ReactNode } from "react"
+import React, { ReactNode, FC } from "react"
 
-type TPage = {
+interface Props {
   children: ReactNode
 }
 
-const Page: SFC<TPage> = ({ children }: TPage) => (
+const Page: FC<Props> = ({ children }) => (
   <div className="page">
     {children}
     <style jsx>{`

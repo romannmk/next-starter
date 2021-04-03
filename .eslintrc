@@ -10,11 +10,10 @@
     "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true // Allows for the parsing of JSX
-    } // Allows for the use of imports
+    }
   },
   "rules": {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-    // e.g. "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/member-delimiter-style": "off",
     "no-console": "error"
   },
