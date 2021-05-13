@@ -1,10 +1,9 @@
 import "../styles/reboot.css"
 
-import { storiesOf } from "@storybook/react"
-import React from "react"
+import React, { FC } from "react"
 
 import Page from "../components/Page"
 
-storiesOf("Page", module).add("with text", () => {
-  return <Page title="Hello Storybook"></Page>
-})
+export default { title: "Page" }
+
+export const withTitle: FC = () => <Page title="Hello Storybook" />
