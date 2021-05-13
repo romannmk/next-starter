@@ -5,5 +5,6 @@ module.exports = withPreact({
   experimental: {
     modern: true,
     polyfillsOptimization: true,
+    eslint: true,
   },
 })

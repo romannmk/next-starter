@@ -1,9 +1,9 @@
 import "../styles/reboot.css"
 
-import React from "react"
+import { NextPage } from "next"
 import { AppProps } from "next/app"
 import Head from "next/head"
-import { NextPage } from "next"
+import React from "react"
 
 // Init preact devtools on client side
 if (typeof window !== "undefined" && process.env.NODE_ENV === "development") {

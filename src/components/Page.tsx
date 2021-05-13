@@ -1,11 +1,12 @@
-import React, { ReactNode, FC } from "react"
+import { FC } from "react"
 
 interface Props {
-  children: ReactNode
+  title: string
 }
 
-const Page: FC<Props> = ({ children }) => (
+const Page: FC<Props> = ({ title, children }) => (
   <div className="page">
+    <h1>{title}</h1>
     {children}
     <style jsx>{`
       .page {
