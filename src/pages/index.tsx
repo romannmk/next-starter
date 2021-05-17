@@ -1,7 +1,7 @@
 import { NextPage } from "next"
 import React from "react"
 
-import Page from "../components/Page"
+import Page from "../components/common/Page"
 
 const Index: NextPage = () => (
   <Page title="Nest.js Starter">

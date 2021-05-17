@@ -2,7 +2,7 @@ import "../styles/reboot.css"
 
 import React, { FC } from "react"
 
-import Page from "../components/Page"
+import Page from "../components/common/Page"
 
 export default { title: "Page" }
 
